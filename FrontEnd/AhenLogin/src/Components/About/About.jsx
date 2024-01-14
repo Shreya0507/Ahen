@@ -21,7 +21,7 @@ export default function About() {
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8 md:w-full">
-            <div className="md:w-1/2">
+            <div className="md:w-full md:max-w-xl">
               <div className="text-lg why-choose-container">
                 <h3 className="font-bold mb-2 text-center why-choose-title">
                   Why Choose Ahen DriveTech?
@@ -59,7 +59,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="md:w-1/2">
+            <div className="md:w-full md:max-w-xl mt-4 md:mt-0">
               <img
                 src={myImg}
                 alt="Ahen DriveTech"
@@ -86,12 +86,10 @@ export default function About() {
                 <div className="about-card features border border-white">
                   <div className=" text-lg">
                     <h3 className="font-bold mb-2 text-center">Features of Ahen</h3>
-                    <ul className="list-disc list-inside">
+                    <ul className="list-disc list-inside text-left">
                       <li>Home pickup and drop facility.</li>
                       <li>Emphasis on bike learning.</li>
-                      <li>
-                        Various learning options: Car, Bike, Rickshaw, etc.
-                      </li>
+                      <li>Various learning options: Car, Bike, Rickshaw, etc.</li>
                       <li>Flexible payment plans.</li>
                     </ul>
                   </div>
@@ -100,7 +98,7 @@ export default function About() {
                 <div className="about-card service border border-white">
                   <div className=" text-lg">
                     <h3 className="font-bold mb-2 text-center">Service Availability</h3>
-                    <ul className="list-disc list-inside">
+                    <ul className="list-disc list-inside ">
                       <li>Pune: 150 services</li>
                       <li>Mumbai: 40 services</li>
                       <li>Bangalore: 20 services</li>

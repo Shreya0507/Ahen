@@ -1,8 +1,10 @@
+/* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wellfleet&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
 
+/* Keyframes */
 @keyframes about-cardShine {
   0% {
     background-position: 0% 50%;
@@ -12,35 +14,17 @@
   }
 }
 
-.about-card.ourVision {
-  background: transparent;
-  animation: about-cardShine 5s ease-in-out infinite alternate;
-}
-
-.about-card.features {
-  background: transparent;
-  animation: about-cardShine 5s ease-in-out infinite alternate;
-}
-
-.about-card.service {
-  background: transparent;
-  animation: about-cardShine 5s ease-in-out infinite alternate;
-}
-
-.about-card.customerCare {
-  background: transparent;
-  animation: about-cardShine 5s ease-in-out infinite alternate;
-}
-
+/* About Cards */
 .about-cards {
   display: flex;
   gap: 15px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .about-card {
   flex: 1;
-  min-width: 300px;
+  min-width: 200px;
   width: 100%;
   max-width: 400px;
   display: flex;
@@ -77,6 +61,7 @@
   transform: scale(0.9, 0.9);
 }
 
+/* Welcome Section */
 .welcome {
   background: linear-gradient(
     to right,
@@ -103,6 +88,7 @@
   }
 }
 
+/* Image Section */
 .smaller-image {
   max-width: 600px;
   width: 100%;
@@ -123,6 +109,7 @@
   box-shadow: none;
 }
 
+/* Fade In Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -132,6 +119,7 @@
   }
 }
 
+/* Hover Effect Animation */
 @keyframes hoverEffect {
   from {
     opacity: 0;
@@ -141,6 +129,7 @@
   }
 }
 
+/* Why Choose Container */
 .why-choose-container {
   background: transparent;
   animation: about-cardShine 5s ease-in-out infinite alternate;
@@ -153,3 +142,15 @@
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .about-card {
+    max-width: 100%; /* Adjust max-width for smaller screens */
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+}
+

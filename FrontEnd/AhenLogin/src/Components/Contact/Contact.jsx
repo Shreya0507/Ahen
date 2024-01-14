@@ -1,8 +1,6 @@
-import { useState } from "react";
-import "./Contact.css";
+import { useState, useRef, useEffect } from "react";
 
 export default function Contact() {
-    // const navigate = useNavigate();
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -11,6 +9,7 @@ export default function Contact() {
   });
 
   const [successMessage, setSuccessMessage] = useState("");
+  const formRef = useRef(null);
 
   const handleInput = (event) => {
     setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
@@ -32,12 +31,14 @@ export default function Contact() {
       .then((res) => {
         if (res.ok) {
           setSuccessMessage("Form submitted successfully!");
-          setValues({
-            name: "",
-            email: "",
-            tel: "",
-            query: "",
-          });
+          formRef.current.reset();
+          // setValues((prev) => ({
+          //   ...prev,
+          //   name: "",
+          //   email: "",
+          //   tel: "",
+          //   query: "",
+          // }));
         } else {
           console.log("Network error occured");
         }
@@ -45,18 +46,27 @@ export default function Contact() {
       .catch((err) => console.log(err));
   };
 
+  useEffect(() => {
+    // Use the effect to clear the success message after a delay
+    if (successMessage) {
+      const timerId = setTimeout(() => {
+        setSuccessMessage("");
+      }, 5000);
+
+      return () => clearTimeout(timerId);
+    }
+  }, [successMessage]);
+
+
   return (
     <div className="relative flex items-top justify-center min-h-[700px] sm:items-center sm:pt-0">
       <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
         <div className="mt-8 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div
-              className="p-6 mr-2 bg-gray-100 sm:rounded-lg border border-black form-container"
-              style={{
-                marginTop: "60px",
-                height: "380px",
-              }}
-            >
+            <div className="p-6 mr-2 bg-gray-100 sm:rounded-lg border border-black" style={{
+              marginTop: "60px",
+              height: "380px"
+            }}>
               <h1 className="text-2xl sm:text-4xl text-black font-bold tracking-tight">
                 Get in touch:
               </h1>
@@ -138,8 +148,9 @@ export default function Contact() {
             </div>
 
             <form
+              ref={formRef}
               onSubmit={handleSubmit}
-              className="p-6 flex flex-col justify-center mt-8 form-container"
+              className="p-6 flex flex-col justify-center mt-8"
             >
               <div className="flex flex-col">
                 <label htmlFor="name" className="hidden">
@@ -204,17 +215,16 @@ export default function Contact() {
               )}
 
         
-<button
-            type="submit"
-            className="md:w-32 bg-orange-700 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-orange-600 transition ease-in-out duration-300"
-          >
+              <button
+                type="submit"
+                className="md:w-32 bg-orange-700 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-orange-600 transition ease-in-out duration-300"
+                >
                 Submit
               </button>
             </form>
-
           </div>
           <br />
-          <div className="mt-8 md:mt-0  sm:rounded-lg p-0  overflow-hidden relative border border-black map-container">
+          <div className="mt-8 md:mt-0  sm:rounded-lg p-0  overflow-hidden relative border border-black">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d95589.69802329544!2d73.79254064253388!3d18.753400181044462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQxJzQwLjMiTiA3M8KwNTEnNDYuMiJF!5e0!3m2!1sen!2sin!4v1703872793010!5m2!1sen!2sin"
               width="100%"

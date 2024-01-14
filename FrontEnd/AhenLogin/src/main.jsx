@@ -8,6 +8,7 @@ import Signup from './Components/Signup/Signup.jsx'
 import Signin from './Components/Signin/Signin.jsx'
 import Contact from './Components/Contact/Contact.jsx'
 import Welcome from './Components/Welcome/Welcome.jsx'
+import Location from './Components/Location/Location.jsx'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 
 const router = createBrowserRouter(
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
       <Route path='signin' element={<Signin />} />
       <Route path='signup' element={<Signup />} />
       <Route path='welcome' element={<Welcome />} />
+      <Route path='location' element={<Location />} />
 
     </Route>
   )

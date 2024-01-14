@@ -10,7 +10,7 @@
 .form-container:hover,
 .map-container:hover {
   transform: scale(1.05);
-  filter: brightness(1.2);
+  filter: brightness(1);
 }
 
 .form-container form {
@@ -27,6 +27,7 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  max-width: 400px;
 }
 
 .form-container textarea {
@@ -44,6 +45,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
+  max-width: 200px;
 }
 
 .form-container button:hover {
@@ -52,4 +54,3 @@
 }
 
 
-/* Add other styles and animations as needed */
