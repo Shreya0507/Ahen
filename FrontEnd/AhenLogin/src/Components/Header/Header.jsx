@@ -77,6 +77,30 @@ export default function Header() {
                   Location
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to={"/serivce"}
+                  className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200 ${
+                      isActive ? "text-orange-600" : "text-gray-600"
+                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-950) lg:p-0`
+                  }
+                >
+                  Service
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to={"/book"}
+                  className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200 ${
+                      isActive ? "text-orange-600" : "text-gray-600"
+                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-950) lg:p-0`
+                  }
+                >
+                  Book Now
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
