@@ -1,0 +1,87 @@
+/* Add your styling for the SchoolDetails component here */
+  
+  .school-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .details-section {
+    margin-bottom: 30px;
+  }
+  
+  .details-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .details-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .details-section li {
+    margin-bottom: 5px;
+  }
+  /* Add styles for other sections as needed */
+/* Add your styling for the Modal component here */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+}
+
+
+/* Add your styling for the SchoolDetails component here */
+.school-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow: auto; /* Enable scrolling for the entire modal */
+  box-sizing: border-box; 
+}
+
+.school-details-container {
+  width: 100%; /* Adjust this to your desired width */
+  max-width: 100%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 100%; 
+  box-sizing: border-box; 
+  height: 100vh;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #333;
+}
